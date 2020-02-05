@@ -6,8 +6,14 @@ import org.junit.Test;
 public class GameCardTest {
     
     @Test
-    public void NormalCard() {
-        GameCard game1 = new GameCard("12345123451234512345");
-        assertEquals(game1.totalScore(), 60, 0);
+    public void emptyCard() {
+        GameCard game = new GameCard("");
+        assertEquals(game.totalScore(), 0, 0);
+    }
+    
+    @Test
+    public void normalCard() {
+        GameCard game = new GameCard("12345123451234512345");
+        assertEquals(game.totalScore(), 60, 0);
     }
 }

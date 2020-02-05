@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="edu.elsmancs.bowlinggame.domain.GameCardTest" time="0.001" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="edu.elsmancs.bowlinggame.domain.GameCardTest" time="0.002" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.1+13"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.1\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\dajoz\Documents\NetBeansProjects\BowlingGame"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\dajoz\Documents\FP DUAL\1º FP Superior Dual - Desarrollo de Aplicaciones Web\Programación\BowlingGame"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="test" value="edu.elsmancs.bowlinggame.domain.GameCardTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\dajoz\Documents\NetBeansProjects\BowlingGame"/>
+    <property name="user.dir" value="C:\Users\dajoz\Documents\FP DUAL\1º FP Superior Dual - Desarrollo de Aplicaciones Web\Programación\BowlingGame"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="11.0.1+13"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
@@ -30,7 +30,7 @@
     <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-11.2\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\NetBeans-11.2\netbeans\java\maven\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Java\jdk-13.0.1\bin;C:\Program Files\Java\jre1.8.0_241\bin;C:\Users\dajoz\Documents\apache-maven-3.6.3\bin;C:\Users\dajoz\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\dajoz\AppData\Local\Programs\Python\Python38\;C:\Users\dajoz\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\dajoz\AppData\Local\Programs\Python\Python37-32\;C:\Users\dajoz\AppData\Local\Microsoft\WindowsApps;C:\Users\dajoz\AppData\Roaming\npm;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Java\jdk-13.0.1\bin;C:\Program Files\Java\jre1.8.0_241\bin;C:\Users\dajoz\Documents\apache-maven-3.6.3\bin;C:\Program Files\Java\jdk-11.0.1\bin;C:\Users\dajoz\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\dajoz\AppData\Local\Programs\Python\Python38\;C:\Users\dajoz\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\dajoz\AppData\Local\Programs\Python\Python37-32\;C:\Users\dajoz\AppData\Local\Microsoft\WindowsApps;C:\Users\dajoz\AppData\Roaming\npm;."/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="55.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -63,5 +63,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="NormalCard" time="0.001"/>
+  <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="emptyCard" time="0.002"/>
+  <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="normalCard" time="0"/>
 </testsuite>
