@@ -16,7 +16,8 @@ public class GameCard {
     public int totalScore() { 
         for (int i = 0; i < getScores().length() ; i++) {
             char character = getScores().charAt(i);
-            totalScore = totalScore + Character.getNumericValue(character);
+            int value = Character.getNumericValue(character);
+            totalScore = totalScore + value;
         }
         return totalScore;    
     }
