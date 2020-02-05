@@ -13,7 +13,7 @@ public class GameCard {
         return this.scores;
     }
     
-    public int totalScore() { 
+    protected int totalScore() { 
         for (int i = 0; i < getScores().length() ; i++) {
             char character = getScores().charAt(i);
             int value = Character.getNumericValue(character);
@@ -22,7 +22,7 @@ public class GameCard {
         return totalScore;    
     }
     
-    protected int getTotal() {
+    protected int getTotalScore() {
         return totalScore;
     }
 }
