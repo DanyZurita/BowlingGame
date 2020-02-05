@@ -10,7 +10,7 @@ public class GameCardTest {
         GameCard game = new GameCard("");
         assertEquals(game.totalScore(), 0, 0);
         System.out.println("- Test emptyCard score:");
-        System.out.println(game.getTotal());
+        System.out.println(game.getTotalScore());
     }
     
     @Test
@@ -18,6 +18,6 @@ public class GameCardTest {
         GameCard game = new GameCard("12345123451234512345");
         assertEquals(game.totalScore(), 60, 0);
         System.out.println("- Test normalCard score:");
-        System.out.println(game.getTotal());
+        System.out.println(game.getTotalScore());
     }
 }
