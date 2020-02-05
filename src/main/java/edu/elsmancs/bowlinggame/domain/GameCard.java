@@ -21,4 +21,8 @@ public class GameCard {
         }
         return totalScore;    
     }
+    
+    protected int getTotal() {
+        return totalScore;
+    }
 }
