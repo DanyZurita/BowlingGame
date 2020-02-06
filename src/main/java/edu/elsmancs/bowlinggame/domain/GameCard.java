@@ -20,52 +20,39 @@ public class GameCard {
             int lastRoll = 0;
             int nextRoll = 0;
             int next2Roll = 0;
-            try {
-                nextRoll = parseRoll(position, getScores().charAt(position + 1));
-                
-            }
-            catch(Exception e) {
-            }
-            try {
-                lastRoll = parseRoll(position, getScores().charAt(position - 1));
-                
-            }
-            catch(Exception e) {
-            }
-            try {
-                next2Roll = parseRoll(position, getScores().charAt(position + 2));
-                
-            }   
-            catch(Exception e) {
-            }
-            if (null == String.valueOf(roll)) {
-            }
-            else switch (String.valueOf(roll)) {
+            int frames = 0;
+            nextRoll = getNextRoll(position);
+            next2Roll = getNext2Roll(position);
+            lastRoll = getlastRoll(position);
+            switch (String.valueOf(roll)) {
                 case "-":
                     break;
                 case "/":
-                    if (position > getScores().length() - 4) {
+                    if (frames >= 9) {
                         value = parseRoll(position, roll);
                         totalScore += value;
                     }
                     else {
                         value = 10 - lastRoll + nextRoll;
+                        frames += 0.5;
                         totalScore += value;
                     }
                     break;
                     
                 case "X":
-                    if (position > getScores().length() - 4) {
+                    if (frames >= 9) {
                         value = parseRoll(position, roll);
                         totalScore += value;
                     }
                     else {
                         value = 10 + nextRoll + next2Roll;
                         totalScore += value;
+                        frames += 1;
                     }
                     break;
                 default:
                     value = Character.getNumericValue(roll);
+                    frames += 0.5;
                     totalScore += value;
                     break;
             }   
@@ -92,6 +79,34 @@ public class GameCard {
                 break;
         }
         return value;
+    }
+    
+    int getNextRolls(int position) {
+        int nextRoll = 0;
+        
+        if ( (position + 1) <= getScores().length()) {
+            nextRoll = parseRoll(position, getScores().charAt(position + 1));
+        }
+        return nextRoll;
+    }
+        
+    protected int getNext2Rolls(int position) {
+        int next2Rolls = 0;
+        if ( (position + 2) <= getScores().length()) {
+            next2Rolls = parseRoll(position, getScores().charAt(position + 1));
+
+        }
+        return next2Rolls;
+    }
+    
+    protected int getLastRolls(int position) {
+        int lastRoll = 0;
+        
+        if ( (position - 1) < 0) {
+            lastRoll = parseRoll(position, getScores().charAt(position + 1));
+
+        }
+        return lastRoll; 
     }
     
     protected int getTotalScore() {
