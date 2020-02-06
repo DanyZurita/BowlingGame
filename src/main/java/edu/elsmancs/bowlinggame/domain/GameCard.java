@@ -14,26 +14,26 @@ public class GameCard {
     }
     
     protected int totalScore() { 
-        for (int i = 0; i < getScores().length() ; i++) {
-            char roll = getScores().charAt(i);
+        for (int position = 0; position < getScores().length() ; position++) {
+            char roll = getScores().charAt(position);
             int value = 0;
             int lastRoll = 0;
             int nextRoll = 0;
             int next2Roll = 0;
             try {
-                nextRoll = parseRoll(i, getScores().charAt(i + 1));
+                nextRoll = parseRoll(position, getScores().charAt(position + 1));
                 
             }
             catch(Exception e) {
             }
             try {
-                lastRoll = parseRoll(i, getScores().charAt(i - 1));
+                lastRoll = parseRoll(position, getScores().charAt(position - 1));
                 
             }
             catch(Exception e) {
             }
             try {
-                next2Roll = parseRoll(i, getScores().charAt(i + 2));
+                next2Roll = parseRoll(position, getScores().charAt(position + 2));
                 
             }   
             catch(Exception e) {
@@ -44,8 +44,8 @@ public class GameCard {
                 case "-":
                     break;
                 case "/":
-                    if (i > getScores().length() - 4) {
-                        value = parseRoll(i, roll);
+                    if (position > getScores().length() - 4) {
+                        value = parseRoll(position, roll);
                         totalScore += value;
                     }
                     else {
@@ -55,8 +55,8 @@ public class GameCard {
                     break;
                     
                 case "X":
-                    if (i > getScores().length() - 4) {
-                        value = parseRoll(i, roll);
+                    if (position > getScores().length() - 4) {
+                        value = parseRoll(position, roll);
                         totalScore += value;
                     }
                     else {

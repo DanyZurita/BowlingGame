@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="1" name="edu.elsmancs.bowlinggame.domain.GameCardTest" time="0.029" errors="0" skipped="0">
+<testsuite tests="6" failures="1" name="edu.elsmancs.bowlinggame.domain.GameCardTest" time="0.013" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.1+13"/>
@@ -63,11 +63,11 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="emptyCard" time="0.011"/>
+  <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="emptyCard" time="0.003"/>
   <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="normalCard" time="0"/>
-  <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="spareCard" time="0.001"/>
+  <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="spareCard" time="0"/>
   <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="all9rollsCard" time="0.001"/>
-  <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="noBonusBallCard" time="0.016">
+  <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="noBonusBallCard" time="0.009">
     <failure message="expected:&lt;243.0&gt; but was:&lt;272.0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;243.0&gt; but was:&lt;272.0&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
