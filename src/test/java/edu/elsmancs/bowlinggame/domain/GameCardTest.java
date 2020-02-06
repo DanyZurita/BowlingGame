@@ -44,4 +44,12 @@ public class GameCardTest {
         System.out.println("- Test perfectCard score:");
         System.out.println(game.getTotalScore());
     }
+    
+    @Test
+    public void noBonusBallCard() {
+        GameCard game = new GameCard("XXXXXXXXX11");
+        assertEquals(game.totalScore(), 272, 0);
+        System.out.println("- Test perfectCard score:");
+        System.out.println(game.getTotalScore());
+    }
 }

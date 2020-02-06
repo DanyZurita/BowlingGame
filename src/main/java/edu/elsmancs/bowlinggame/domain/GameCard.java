@@ -44,7 +44,7 @@ public class GameCard {
                 case "-":
                     break;
                 case "/":
-                    if (i > getScores().length() - 3) {
+                    if (i > getScores().length() - 4) {
                         value = parseRoll(i, roll);
                         totalScore += value;
                     }
