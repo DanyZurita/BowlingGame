@@ -22,11 +22,26 @@ public class GameCardTest {
     }
     
     @Test
-    public void all9Card() {
+    public void all9rollsCard() {
         GameCard game = new GameCard("9-9-9-9-9-9-9-9-9-9-");
         assertEquals(game.totalScore(), 90, 0);
-        System.out.println("- Test normalCard score:");
+        System.out.println("- Test all9rollsCard score:");
         System.out.println(game.getTotalScore());
     }
     
+    @Test
+    public void spareCard() {
+        GameCard game = new GameCard("5/5/5/5/5/5/5/5/5/5/5");
+        assertEquals(game.totalScore(), 150, 0);
+        System.out.println("- Test spareCard score:");
+        System.out.println(game.getTotalScore());
+    }
+    
+    @Test
+    public void perfectCard() {
+        GameCard game = new GameCard("XXXXXXXXXXXX");
+        assertEquals(game.totalScore(), 300, 0);
+        System.out.println("- Test perfectCard score:");
+        System.out.println(game.getTotalScore());
+    }
 }

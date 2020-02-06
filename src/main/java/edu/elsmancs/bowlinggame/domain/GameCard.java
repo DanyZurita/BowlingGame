@@ -21,36 +21,77 @@ public class GameCard {
             int nextRoll = 0;
             int next2Roll = 0;
             try {
-                lastRoll = Character.getNumericValue(getScores().charAt(i - 1));
-                nextRoll = Character.getNumericValue(getScores().charAt(i + 1));
-                next2Roll = Character.getNumericValue(getScores().charAt(i + 2));
+                nextRoll = parseRoll(i, getScores().charAt(i + 1));
+                
             }
             catch(Exception e) {
             }
+            try {
+                lastRoll = parseRoll(i, getScores().charAt(i - 1));
+                
+            }
+            catch(Exception e) {
+            }
+            try {
+                next2Roll = parseRoll(i, getScores().charAt(i + 2));
+                
+            }   
+            catch(Exception e) {
+            }
             if (null == String.valueOf(roll)) {
-                value = Character.getNumericValue(roll);
-                totalScore += value;
             }
             else switch (String.valueOf(roll)) {
                 case "-":
-                    totalScore += value;
                     break;
                 case "/":
-                    value = 10 - lastRoll + nextRoll;
-                    totalScore += value;
+                    if (i > getScores().length() - 3) {
+                        value = parseRoll(i, roll);
+                        totalScore += value;
+                    }
+                    else {
+                        value = 10 - lastRoll + nextRoll;
+                        totalScore += value;
+                    }
                     break;
+                    
                 case "X":
-                    value = 10 + nextRoll + next2Roll;
-                    totalScore += value;
+                    if (i > getScores().length() - 4) {
+                        value = parseRoll(i, roll);
+                        totalScore += value;
+                    }
+                    else {
+                        value = 10 + nextRoll + next2Roll;
+                        totalScore += value;
+                    }
                     break;
                 default:
                     value = Character.getNumericValue(roll);
                     totalScore += value;
                     break;
-            }
-            
+            }   
         }
         return totalScore;    
+    }
+    
+    protected int parseRoll(int i,char roll){
+        int value = 0;
+        if (null == String.valueOf(roll)) {
+        }
+        else switch (String.valueOf(roll)) {
+            case "-":
+                break;
+            case "/":
+                int lastRoll = Character.getNumericValue(getScores().charAt(i - 1));
+                value = 10 - lastRoll;
+                break;
+            case "X":
+                value = 10;
+                break;
+            default:
+                value = Character.getNumericValue(roll);
+                break;
+        }
+        return value;
     }
     
     protected int getTotalScore() {
