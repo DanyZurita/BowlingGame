@@ -20,4 +20,13 @@ public class GameCardTest {
         System.out.println("- Test normalCard score:");
         System.out.println(game.getTotalScore());
     }
+    
+    @Test
+    public void all9Card() {
+        GameCard game = new GameCard("9-9-9-9-9-9-9-9-9-9-");
+        assertEquals(game.totalScore(), 90, 0);
+        System.out.println("- Test normalCard score:");
+        System.out.println(game.getTotalScore());
+    }
+    
 }
