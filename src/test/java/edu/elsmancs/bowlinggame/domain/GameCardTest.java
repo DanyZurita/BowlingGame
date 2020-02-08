@@ -48,8 +48,39 @@ public class GameCardTest {
     @Test
     public void noBonusBallCard() {
         GameCard game = new GameCard("XXXXXXXXX11");
-        assertEquals(game.totalScore(), 272, 0);
-        System.out.println("- Test perfectCard score:");
+        assertEquals(game.totalScore(), 245, 0);
+        System.out.println("- Test noBonusBallCard score:");
+        System.out.println(game.getTotalScore());
+    }
+    
+    @Test
+    public void noBonusBall2Card() {
+        GameCard game = new GameCard("7/7/9/---463514/2-5-");
+        assertEquals(game.totalScore(), 84, 0);
+        System.out.println("- Test noBonusBall2Card score:");
+        System.out.println(game.getTotalScore());
+    }
+    
+    @Test
+    public void onlyBonusBallsCard() {
+        GameCard game = new GameCard("-------------------XX");
+        assertEquals(game.totalScore(), 20, 0);
+        System.out.println("- Test onlyBonusBallsCard score:");
+        System.out.println(game.getTotalScore());
+    }
+    
+    @Test
+    public void strickeBonusBallsCard() {
+        GameCard game = new GameCard("------------------XXX");
+        assertEquals(game.totalScore(), 30, 0);
+        System.out.println("- Test strickeBonusBallsCard score:");
+        System.out.println(game.getTotalScore());
+    }
+    @Test
+    public void spareBonusBallsCard() {
+        GameCard game = new GameCard("------------------XXX");
+        assertEquals(game.totalScore(), 30, 0);
+        System.out.println("- Test spareBonusBallsCard score:");
         System.out.println(game.getTotalScore());
     }
 }

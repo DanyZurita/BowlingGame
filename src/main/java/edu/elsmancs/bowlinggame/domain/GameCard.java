@@ -4,6 +4,9 @@ package edu.elsmancs.bowlinggame.domain;
 public class GameCard {
     private final String scores;
     private int totalScore = 0;
+    private int lastRoll = 0;
+    private int nextRoll = 0;
+    private int next2Roll = 0;
     
     GameCard(String scores) {
         this.scores = scores;
@@ -13,47 +16,54 @@ public class GameCard {
         return this.scores;
     }
     
-    protected int totalScore() { 
+    protected int totalScore() {
+        int frames = 0;
         for (int position = 0; position < getScores().length() ; position++) {
-            char roll = getScores().charAt(position);
-            int value = 0;
-            int lastRoll = 0;
-            int nextRoll = 0;
-            int next2Roll = 0;
-            int frames = 0;
+            char rollChar = getScores().charAt(position);
+            int rollValue = 0;
+            lastRoll = 0;
+            nextRoll = 0;
+            next2Roll = 0;
+
             nextRoll = getNextRoll(position);
-            next2Roll = getNext2Roll(position);
-            lastRoll = getlastRoll(position);
-            switch (String.valueOf(roll)) {
+            
+            
+            switch (String.valueOf(rollChar)) {
                 case "-":
+                    frames ++;
+                    totalScore += 0;
                     break;
                 case "/":
-                    if (frames >= 9) {
-                        value = parseRoll(position, roll);
-                        totalScore += value;
+                    if (frames >= 18) {
+                        lastRoll = getLastRoll(position);
+                        rollValue = parseRoll(position, rollChar);
+                        totalScore += rollValue;
                     }
                     else {
-                        value = 10 - lastRoll + nextRoll;
-                        frames += 0.5;
-                        totalScore += value;
+                        lastRoll = getLastRoll(position);
+                        rollValue = 10 - lastRoll + nextRoll;
+                        frames ++;
+                        totalScore += rollValue;
                     }
                     break;
                     
                 case "X":
-                    if (frames >= 9) {
-                        value = parseRoll(position, roll);
-                        totalScore += value;
+                    if (frames >= 18) {
+                        rollValue = parseRoll(position, rollChar);
+                        totalScore += rollValue;
                     }
                     else {
-                        value = 10 + nextRoll + next2Roll;
-                        totalScore += value;
-                        frames += 1;
+                        next2Roll = getNext2Roll(position);
+                        rollValue = 10 + nextRoll + next2Roll;
+                        totalScore += rollValue;
+                        frames ++;
+                        frames ++;
                     }
                     break;
                 default:
-                    value = Character.getNumericValue(roll);
-                    frames += 0.5;
-                    totalScore += value;
+                    rollValue = Character.getNumericValue(rollChar);
+                    frames ++;
+                    totalScore += rollValue;
                     break;
             }   
         }
@@ -61,52 +71,58 @@ public class GameCard {
     }
     
     protected int parseRoll(int i,char roll){
-        int value = 0;
+        int rollValue = 0;
         if (null == String.valueOf(roll)) {
         }
         else switch (String.valueOf(roll)) {
             case "-":
                 break;
             case "/":
-                int lastRoll = Character.getNumericValue(getScores().charAt(i - 1));
-                value = 10 - lastRoll;
+                rollValue = 10 - lastRoll;
                 break;
             case "X":
-                value = 10;
+                rollValue = 10;
                 break;
             default:
-                value = Character.getNumericValue(roll);
+                rollValue = Character.getNumericValue(roll);
                 break;
         }
-        return value;
+        return rollValue;
     }
     
-    int getNextRolls(int position) {
-        int nextRoll = 0;
+    int getNextRoll(int position) {
+        int nextRollValue = 0;      
+        int next = (position + 1);
         
-        if ( (position + 1) <= getScores().length()) {
-            nextRoll = parseRoll(position, getScores().charAt(position + 1));
+        if ( next < getScores().length()) {
+            char nextChar = getScores().charAt(next);
+            nextRollValue = parseRoll(position, nextChar);
         }
-        return nextRoll;
+        return nextRollValue;
     }
         
-    protected int getNext2Rolls(int position) {
-        int next2Rolls = 0;
-        if ( (position + 2) <= getScores().length()) {
-            next2Rolls = parseRoll(position, getScores().charAt(position + 1));
+    int getNext2Roll(int position) {
+        int next2RollValue = 0;
+        int next2 = (position + 2);
+        
+        if ( next2 < getScores().length()) {
+            char next2Char = getScores().charAt(next2);
+            next2RollValue = parseRoll(position, next2Char);
 
         }
-        return next2Rolls;
+        return next2RollValue;
     }
     
-    protected int getLastRolls(int position) {
-        int lastRoll = 0;
+    int getLastRoll(int position) {
+        int lastRollsValue = 0;
+        int last = (position - 1);
         
-        if ( (position - 1) < 0) {
-            lastRoll = parseRoll(position, getScores().charAt(position + 1));
+        if (  last > 0) {
+            char lastChar = getScores().charAt(last);
+            lastRollsValue = Character.getNumericValue(lastChar);
 
         }
-        return lastRoll; 
+        return lastRollsValue; 
     }
     
     protected int getTotalScore() {
