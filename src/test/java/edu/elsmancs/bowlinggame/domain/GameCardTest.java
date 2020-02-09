@@ -76,11 +76,28 @@ public class GameCardTest {
         System.out.println("- Test strickeBonusBallsCard score:");
         System.out.println(game.getTotalScore());
     }
+    
     @Test
     public void spareBonusBallsCard() {
-        GameCard game = new GameCard("------------------XXX");
-        assertEquals(game.totalScore(), 30, 0);
+        GameCard game = new GameCard("------------------X5/");
+        assertEquals(game.totalScore(), 20, 0);
         System.out.println("- Test spareBonusBallsCard score:");
+        System.out.println(game.getTotalScore());
+    }
+    
+    @Test
+    public void spare2BonusBallsCard() {
+        GameCard game = new GameCard("------------------7/1");
+        assertEquals(game.totalScore(), 11, 0);
+        System.out.println("- Test spare2BonusBallsCard score:");
+        System.out.println(game.getTotalScore());
+    }
+    
+    @Test
+    public void all3RollCard() {
+        GameCard game = new GameCard("33333333333333333333");
+        assertEquals(game.totalScore(), 60, 0);
+        System.out.println("- Test all3RollCard score:");
         System.out.println(game.getTotalScore());
     }
 }
