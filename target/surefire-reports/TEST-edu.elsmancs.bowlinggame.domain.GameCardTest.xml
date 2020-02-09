@@ -63,7 +63,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="emptyCard" time="0.003"/>
+  <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="emptyCard" time="0.002"/>
   <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="normalCard" time="0"/>
   <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="spareCard" time="0"/>
   <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="onlyBonusBallsCard" time="0"/>
@@ -74,5 +74,5 @@
   <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="noBonusBall2Card" time="0"/>
   <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="all3RollCard" time="0"/>
   <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="spare2BonusBallsCard" time="0"/>
-  <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="perfectCard" time="0"/>
+  <testcase classname="edu.elsmancs.bowlinggame.domain.GameCardTest" name="perfectCard" time="0.001"/>
 </testsuite>
